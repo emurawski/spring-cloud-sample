@@ -1,0 +1,18 @@
+spring:
+  application.name: zuul-proxy
+  session:
+    store-type: redis
+    redis.flush-mode: immediate
+server.port: 8888
+#  ssl.enabled: true
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8080/eureka/
+#      defaultZone: ${cloud1}/eureka/,${cloud1}/eureka/
+    allow-redirects: true
+zuul:
+  routes:
+    eureka:
+      path: /t/**
+      url: http://127.0.0.1:8080

@@ -1,0 +1,8 @@
+server.port: 0
+spring.application.name: app1
+eureka.client.serviceUrl.defaultZone: http://127.0.0.1:8080/eureka/
+node.idx: 0
+spring.session:
+  store-type: redis
+  redis.flush-mode: immediate
+spring.redis.host: 192.168.0.14

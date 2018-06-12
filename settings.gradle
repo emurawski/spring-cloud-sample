@@ -1,0 +1,3 @@
+include 'eureka'
+include 'zuul-proxy'
+include 'app1'

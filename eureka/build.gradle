@@ -1,0 +1,9 @@
+dependencies {
+	compile('org.springframework.cloud:spring-cloud-starter-eureka-server')
+
+	compile 'javax.xml.bind:jaxb-api:+'
+	compile 'com.sun.xml.bind:jaxb-impl:+'
+	compile 'com.sun.xml.bind:jaxb-core:+'
+	compile 'javax.activation:activation:+'
+}
+
