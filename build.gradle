@@ -1,8 +1,8 @@
 buildscript {
     ext {
         kotlinVersion = '1.2.41'
-        springBootVersion = '1.5.13.RELEASE'
-        springCloudVersion = 'Edgware.SR3'
+        springBootVersion = '2.0.7.RELEASE'
+        springCloudVersion = 'Finchley.SR2'
     }
     repositories {
         mavenCentral()
@@ -39,14 +39,15 @@ subprojects {
     }
 
     dependencies {
-        compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}"
+        compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}"
         compile "org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}"
         compile 'org.springframework.boot:spring-boot-starter-web'
         if (project.name != "eureka") {
-            compile 'org.springframework.cloud:spring-cloud-starter-eureka'
+            compile 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
             compile 'org.springframework.boot:spring-boot-starter-security'
+            compile 'redis.clients:jedis'
             compile 'org.springframework.session:spring-session-data-redis'
-            compile 'org.springframework.session:spring-session'
+            compile 'org.springframework.session:spring-session-core'
         }
         testCompile 'org.springframework.boot:spring-boot-starter-test'
     }
